@@ -60,6 +60,7 @@ void Skybox::LoadCubemap(const std::vector<std::string>& faces) {
         }
     }
 
+    //Texture Parameters
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
@@ -90,6 +91,7 @@ void Skybox::SetupShader() {
 
     GLuint vertexShader, fragmentShader;
 
+    //Compile and link the shaders
     vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
     glCompileShader(vertexShader);
